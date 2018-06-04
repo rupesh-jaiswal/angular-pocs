@@ -1,0 +1,12 @@
+<div
+  dropDirective 
+  (dropEvent)="addDropItem($event)" 
+  (dropEventMouse)="dropEventMouse($event)"
+   (dragenterEvent)="dragEnter($event)" 
+   (dragleaveEvent)="dragLeave()" 
+   class="droppable col-md-8" style="border: 1px solid black; height: 600px;overflow:scroll"
+   [dropHighlight]="'highlight'"  
+   (dragoverMouseEvent)="dragoverMouse($event)"
+   injectDragItem
+   item="{{draggedItem}}">
+  </div>
