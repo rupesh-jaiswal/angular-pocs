@@ -22,12 +22,4 @@ export class ControlsComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  releaseDrop(event) {
-   
-  }
-
-  startDrag(event) {
-    
-  }
 }

@@ -2,8 +2,6 @@
   *ngFor="let item of controls"
   [dragDirective]='item'
   [dragHightlight]="'highlight'"
-  (releaseDrop)="releaseDrop($event)"
-  (startDrag)="startDrag(item)"
   class="controls-div">
   {{ item }}  
 </div>

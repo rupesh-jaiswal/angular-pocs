@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ControlsComponent } from './controls.component';
+import { DragDropDirectiveModule } from 'angular4-drag-drop';
+import { By } from '@angular/platform-browser';
 
 describe('ControlsComponent', () => {
   let component: ControlsComponent;
@@ -8,7 +10,8 @@ describe('ControlsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ControlsComponent ]
+      declarations: [ ControlsComponent ],
+      imports: [ DragDropDirectiveModule ]
     })
     .compileComponents();
   }));
@@ -21,5 +24,11 @@ describe('ControlsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+  it('should render all the controls name', () => {
+    const complied=fixture.debugElement.nativeElement;
+    component.controls.forEach((control, index) => {
+      expect(fixture.debugElement.queryAll(By.css('div.controls-div'))[index].nativeElement.textContent.trim()).toEqual(control);
+    })
   });
 });

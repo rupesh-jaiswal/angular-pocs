@@ -1,4 +1,3 @@
-import { Poc2Component } from "../poc2/poc2.component";
 import { TableComponent } from "./table/table.component";
 import { FooterComponent } from "./footer/footer.component";
 import { DropdownComponent } from "./dropdown/dropdown.component";
@@ -17,13 +16,13 @@ export class POC1Service {
         "Header":HeaderControlComponent, 
         "Table": TableComponent, 
         "Footer": FooterComponent, 
-        "Dropdown":DropdownComponent, 
-        "Spinner":SpinnerComponent, 
-        "TextBox":TextboxComponent, 
-        "Button":ButtonComponent, 
-        "Divider":DividerComponent, 
-        "Mask":MaskComponent,
-        "Time":TimeComponent
+        "Dropdown": DropdownComponent, 
+        "Spinner": SpinnerComponent, 
+        "TextBox": TextboxComponent, 
+        "Button": ButtonComponent, 
+        "Divider": DividerComponent, 
+        "Mask": MaskComponent,
+        "Time": TimeComponent
     };
     selectedControl:String;
     getComponent(element: String) {

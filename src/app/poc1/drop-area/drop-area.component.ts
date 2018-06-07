@@ -12,22 +12,7 @@ export class DropAreaComponent implements OnInit {
 
   ngOnInit() {
   }
-  addDropItem(event) {
-    this.draggedItem=event
-  }
-  dropEventMouse(event) {
-    // console.log('dropEventMouse');
-    // console.log(event);
-  }
   dragEnter(event) {
-
      this.draggedItem=event
-  }
-  dragLeave() {
-    // console.log('dragLeave');
-  }
-  dragoverMouse(event) {
-    // console.log('dragoverMouse');
-    // console.log(event);
   }
 }
