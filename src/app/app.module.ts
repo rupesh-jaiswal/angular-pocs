@@ -21,6 +21,7 @@ import { FooterComponent } from './poc1/footer/footer.component';
 import { TableComponent } from './poc1/table/table.component';
 import { SpinnerComponent } from './poc1/spinner/spinner.component';
 import { HeaderControlComponent } from './poc1/header-control/header-control.component';
+import { NoComponentComponent } from './poc1/no-component/no-component.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { HeaderControlComponent } from './poc1/header-control/header-control.com
     TableComponent,
     SpinnerComponent,
     HeaderControlComponent,
+    NoComponentComponent,
   ],
   imports: [
     BrowserModule,
