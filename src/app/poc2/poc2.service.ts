@@ -1,6 +1,8 @@
 import { IconMapper } from "./icon-mapper.model";
+import { EventEmitter } from "@angular/core";
 
 export class POC2Service {
+    iconChange= new EventEmitter<IconMapper>();
     icon: IconMapper;
     iconmapper: IconMapper[]=[
         {name:'Email',classname: 'envelope'},
@@ -16,6 +18,7 @@ export class POC2Service {
     }
     setType(type) {
         this.icon= this.getIconMapper(type);
+        this.iconChange.emit(this.icon);
     }
 
 }

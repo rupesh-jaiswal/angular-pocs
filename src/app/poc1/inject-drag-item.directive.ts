@@ -1,5 +1,4 @@
 import { Input, ElementRef, Directive, HostListener, ViewContainerRef, ComponentFactoryResolver, ComponentRef } from "@angular/core";
-import { Poc2Component } from "../poc2/poc2.component";
 import { POC1Service } from "./poc1.serivce";
 import { NoComponentComponent } from "./no-component/no-component.component";
 @Directive({

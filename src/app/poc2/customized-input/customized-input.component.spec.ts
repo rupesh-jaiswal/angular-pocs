@@ -1,14 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CustomizedInputComponent } from './customized-input.component';
+import { POC2Service } from '../poc2.service';
 
-describe('CustomizedInputComponent', () => {
+xdescribe('CustomizedInputComponent', () => {
   let component: CustomizedInputComponent;
   let fixture: ComponentFixture<CustomizedInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomizedInputComponent ]
+      declarations: [ CustomizedInputComponent ],
+      providers: [ POC2Service ]
     })
     .compileComponents();
   }));
