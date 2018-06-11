@@ -1,3 +1,23 @@
 <p>
-  poc2 works!
+  In this POC we will be creating reusable component using ng-content
 </p>
+  <div class="form-group">
+    <label for="sel1">Select Input type:</label>
+    <select class="form-control" id="sel1" (change)="onChangeType($event)">
+      <option>Email</option>
+      <option>Password</option>
+      <option>Username</option>
+      <option>Gender</option>
+    </select>
+  </div>
+
+  <app-customized-input >
+    <div *ngIf="type=='Gender'; else inputTemplate">
+      <input type=radio name="gender" value="Male">Male
+      <input type=radio name="gender" value="Female">Female 
+    </div>
+    <ng-template #inputTemplate>
+      <input type="text" placeholder="{{type}}">
+    </ng-template>
+    </app-customized-input>
+

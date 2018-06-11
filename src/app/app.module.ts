@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { Poc1Component } from './poc1/poc1.component';
@@ -22,6 +22,7 @@ import { TableComponent } from './poc1/table/table.component';
 import { SpinnerComponent } from './poc1/spinner/spinner.component';
 import { HeaderControlComponent } from './poc1/header-control/header-control.component';
 import { NoComponentComponent } from './poc1/no-component/no-component.component';
+import { CustomizedInputComponent } from './poc2/customized-input/customized-input.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,11 +43,13 @@ import { NoComponentComponent } from './poc1/no-component/no-component.component
     SpinnerComponent,
     HeaderControlComponent,
     NoComponentComponent,
+    CustomizedInputComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DragDropDirectiveModule
+    DragDropDirectiveModule,
+    FormsModule,
   ],
   providers:[POC1Service],
   bootstrap: [AppComponent],
