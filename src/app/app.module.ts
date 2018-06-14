@@ -23,6 +23,8 @@ import { SpinnerComponent } from './poc1/spinner/spinner.component';
 import { HeaderControlComponent } from './poc1/header-control/header-control.component';
 import { NoComponentComponent } from './poc1/no-component/no-component.component';
 import { CustomizedInputComponent } from './poc2/customized-input/customized-input.component';
+import { Poc3Component } from './poc3/poc3.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,12 +46,14 @@ import { CustomizedInputComponent } from './poc2/customized-input/customized-inp
     HeaderControlComponent,
     NoComponentComponent,
     CustomizedInputComponent,
+    Poc3Component,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DragDropDirectiveModule,
     FormsModule,
+    HttpClientModule
   ],
   providers:[POC1Service],
   bootstrap: [AppComponent],

@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Basic Table</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts">
+        <td>{{ post.id}}</td>
+        <td>{{ post.name }}</td>
+        <td>{{ post.email }}</td>
+        <td>{{ post.body }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div> Loading...</div>
+</div>
+
