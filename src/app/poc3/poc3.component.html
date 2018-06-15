@@ -1,4 +1,13 @@
-<div class="container">
+<div class="container"
+  infiniteScroll
+  [infiniteScrollDistance]="0"
+  [infiniteScrollUpDistance]="1.5"
+  [infiniteScrollThrottle]="1000"
+  (scrolled)="onGetData()"
+  style="height: 600px; overflow:scroll;"
+  [infiniteScrollContainer]="divContainer"
+  #divContainer
+>
   <h2>Basic Table</h2>
   <table class="table">
     <thead>
@@ -18,6 +27,9 @@
       </tr>
     </tbody>
   </table>
-  <div> Loading...</div>
+  <div *ngIf="onMore else completeDiv" style="text-align: center;"> Loading...</div>
+  <ng-template #completeDiv>
+      <div style="text-align: center;"> All data is fetched</div>
+  </ng-template>
 </div>
 

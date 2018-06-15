@@ -7,21 +7,32 @@ import { Poc3Service } from './poc3.service';
   styleUrls: ['./poc3.component.css']
 })
 export class Poc3Component implements OnInit {
-  posts:any;
+  posts=[];
+  onMore: boolean = true;
   constructor(private poc3Service: Poc3Service) { }
-
+  i=0;
   ngOnInit() {
     this.onGetData();
   }
 
-  onGetData() {
+  onGetData=()=> {
     this.poc3Service.getData().subscribe(
       (resp) => {
-        this.posts=resp;
+        this.posts=this.posts.concat(resp);
+        this.i=this.i+1;
+        if(this.i==4) {
+          this.onStop();
+        }
       },
       (error) => {
         console.log(error);
       }
     )
+  }
+
+
+  onStop() {
+    this.onMore=false;
+    this.onGetData=() => {};
   }
 }
