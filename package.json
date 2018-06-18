@@ -23,6 +23,7 @@
     "angular4-drag-drop": "^1.1.2",
     "bootstrap": "^3.3.7",
     "core-js": "^2.5.4",
+    "joi": "^13.4.0",
     "predix-ui": "0.0.22",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.2.0",

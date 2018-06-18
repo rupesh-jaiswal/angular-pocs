@@ -1,13 +1,26 @@
+const Joi = require('joi');
 const express = require('express');
 const mock=require('./mock-response');
 const app = express();
-let offset=0;
+app.use(express.json());
 app.get('/api/items', (req,res) => {
-    if(offset+20 == mock.mockResponse.length) {
-      offset=0;
-    }    
-    res.json(mock.mockResponse.slice(offset, offset+20));
-    offset=offset+20;
+    const querySchema= {
+      startWith: Joi.number().max(mock.mockResponse.length-1).required()
+    }
+    const result=Joi.validate(req.query, querySchema);
+    if(result.error)
+      return res.status(404).send(result.error.details[0].message);
+    const offset=parseInt(req.query.startWith);
+    const response={
+      next:true
+    }
+    if(offset+20 > mock.mockResponse.length) {
+      response.next=false
+      response.posts= mock.mockResponse.slice(offset, mock.mockResponse.length);
+    } else {
+      response.posts= mock.mockResponse.slice(offset, offset+20);
+    }
+    res.send(JSON.stringify(response));
 });
-
-app.listen(3000, () => console.log('listening on port 3000'));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`listening on port ${port}`));

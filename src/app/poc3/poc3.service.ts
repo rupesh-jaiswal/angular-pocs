@@ -7,10 +7,7 @@ export class Poc3Service {
 
   constructor(private http: HttpClient) { }
 
-  getData() {
-    const headers=new HttpHeaders();
-    headers.append('Access-Control-Allow-Origin','true');
-    //headers.append('Access-Control-Allow-Origin','');
-    return this.http.get('/api/items', {headers: headers});
+  getData(startWith) {
+    return this.http.get(`/api/items?startWith=${startWith}`);
   }
 }

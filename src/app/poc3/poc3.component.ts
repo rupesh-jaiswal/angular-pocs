@@ -8,6 +8,7 @@ import { Poc3Service } from './poc3.service';
 })
 export class Poc3Component implements OnInit {
   posts=[];
+
   onMore: boolean = true;
   constructor(private poc3Service: Poc3Service) { }
   i=0;
@@ -16,11 +17,12 @@ export class Poc3Component implements OnInit {
   }
 
   onGetData=()=> {
-    this.poc3Service.getData().subscribe(
-      (resp) => {
-        this.posts=this.posts.concat(resp);
-        this.i=this.i+1;
-        if(this.i==4) {
+    this.poc3Service.getData(this.i).subscribe(
+      (resp: {next:boolean, posts: Object}) => {
+        console.log(resp.next);
+        this.posts=this.posts.concat(resp.posts);
+        this.i=this.i+20;
+        if(!resp.next) {
           this.onStop();
         }
       },
