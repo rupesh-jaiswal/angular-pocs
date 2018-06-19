@@ -24,7 +24,7 @@ import { HeaderControlComponent } from './poc1/header-control/header-control.com
 import { NoComponentComponent } from './poc1/no-component/no-component.component';
 import { CustomizedInputComponent } from './poc2/customized-input/customized-input.component';
 import { Poc3Component } from './poc3/poc3.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 @NgModule({
   declarations: [
@@ -57,7 +57,7 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
     HttpClientModule,
     InfiniteScrollModule
   ],
-  providers:[POC1Service],
+  providers:[ POC1Service ],
   bootstrap: [AppComponent],
   entryComponents:[DropdownComponent,
      SpinnerComponent,

@@ -8,7 +8,6 @@ import { Poc3Service } from './poc3.service';
 })
 export class Poc3Component implements OnInit {
   posts=[];
-
   onMore: boolean = true;
   constructor(private poc3Service: Poc3Service) { }
   i=0;
@@ -31,7 +30,6 @@ export class Poc3Component implements OnInit {
       }
     )
   }
-
 
   onStop() {
     this.onMore=false;

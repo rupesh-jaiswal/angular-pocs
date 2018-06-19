@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Poc3Component } from './poc3.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Poc3Service } from './poc3.service';
 
 describe('Poc3Component', () => {
   let component: Poc3Component;
@@ -8,7 +11,9 @@ describe('Poc3Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Poc3Component ]
+      declarations: [ Poc3Component ],
+      imports: [ InfiniteScrollModule, HttpClientModule ],
+      providers: [ Poc3Service, HttpClient ]
     })
     .compileComponents();
   }));
@@ -19,7 +24,7 @@ describe('Poc3Component', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('posts should be initialized to an empty array',() => {
+    expect(component.posts.length).toBe(0);
+  })
 });
