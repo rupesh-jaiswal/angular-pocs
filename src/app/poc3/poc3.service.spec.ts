@@ -1,11 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { Poc3Service } from './poc3.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 describe('Poc3Service', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [Poc3Service]
+      providers: [Poc3Service, HttpClient],
+      imports: [ HttpClientModule]
+
     });
   });
 

@@ -10,23 +10,24 @@ export class Poc3Component implements OnInit {
   posts=[];
   onMore: boolean = true;
   constructor(private poc3Service: Poc3Service) { }
-  i=0;
+  startWith=0;
   ngOnInit() {
     this.onGetData();
   }
 
   onGetData=()=> {
-    this.poc3Service.getData(this.i).subscribe(
+    this.poc3Service.getData(this.startWith).subscribe(
       (resp: {next:boolean, posts: Object}) => {
-        console.log(resp.next);
         this.posts=this.posts.concat(resp.posts);
-        this.i=this.i+20;
+        this.startWith=this.startWith+20;
         if(!resp.next) {
           this.onStop();
         }
       },
       (error) => {
-        console.log(error);
+        if(error.status==404) {
+          this.onStop();
+        }
       }
     )
   }

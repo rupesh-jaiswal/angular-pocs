@@ -72,30 +72,10 @@ describe('Inject-drag-Item directive', () => {
       inputEl = fixture.debugElement.query(By.css('div'));
     });
   
-    it('drop event on div with proper component name', () => {
+    it('drop event on div with component that doesnt exists', () => {
       const component=fixture.componentInstance;
       component.directive.mouseover();
       expect(inputEl.nativeElement.querySelector('p').textContent.trim()).toEqual('no-component works!'); 
     });
-  });
-});
-
-
-describe('when dragged component doesnt exist', () => {
-  let fixture: ComponentFixture<TestComponentWrongInput>;
-  let inputEl: DebugElement;
-  beforeEach(() => {
-    fixture = TestBed.configureTestingModule({
-      imports: [ FakeTestingModule ]
-    })
-    .createComponent(TestComponentWrongInput);
-    fixture.detectChanges();
-    inputEl = fixture.debugElement.query(By.css('div'));
-  });
-
-  it('drop event on div with proper component name', () => {
-    const component=fixture.componentInstance;
-    component.directive.mouseover();
-    expect(inputEl.nativeElement.querySelector('p').textContent.trim()).toEqual('no-component works!'); 
   });
 });

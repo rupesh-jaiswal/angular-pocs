@@ -14,7 +14,7 @@ app.get('/api/items', (req,res) => {
     const response={
       next:true
     }
-    if(offset+20 > mock.mockResponse.length) {
+    if(offset+20 >= mock.mockResponse.length) {
       response.next=false
       response.posts= mock.mockResponse.slice(offset, mock.mockResponse.length);
     } else {
